@@ -10,7 +10,8 @@ export default function CallToAction() {
       <div className="flex-1 justify-center flex flex-col">
         <h2 className="text-2xl">Want to check my other project?</h2>
         <p className="text-gray-500 my-2">
-          Checkout this instagram like app built with react and appwrite!
+          Checkout this instagram like app built with react and appwrite, still
+          buggy but runs!
         </p>
         <Button
           onClick={handleClick}
