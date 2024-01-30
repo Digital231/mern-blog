@@ -10,21 +10,21 @@ export default function About() {
             <p>
               Welcome to Šarūnas Blog! This blog was created by Šarūnas as a
               personal project to share his thoughts and ideas with the world.
-              Šarūnas is a passionate developer who loves to write about
-              technology, coding, and everything in between.
+              As a passionate developer who loves to write about technology,
+              coding, and everything in between.
             </p>
 
             <p>
-              On this blog, you'll find weekly articles and tutorials on topics
-              such as web development, software engineering, and programming
-              languages. Šarūnas is always learning and exploring new
+              On this blog, you&apos;ll find weekly articles and tutorials on
+              topics such as web development, software engineering, and
+              programming languages. Always learning and exploring new
               technologies, so be sure to check back often for new content!
             </p>
 
             <p>
               We encourage you to leave comments on our posts and engage with
-              other readers. You can like other people's comments and reply to
-              them as well. We believe that a community of learners can help
+              other readers. You can like other people&apos;s comments and reply
+              to them as well. We believe that a community of learners can help
               each other grow and improve.
             </p>
           </div>

@@ -28,7 +28,7 @@ export default function FooterCom() {
               <Footer.Title title="About" />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href="https://www.tapsnoklis.lt/"
+                  href="https://sarunas.top"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -46,17 +46,17 @@ export default function FooterCom() {
             <div>
               <Footer.Title title="Follow us" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#" target="_blank" rel="noopener noreferrer">
+                <Footer.Link href="" target="_blank" rel="noopener noreferrer">
                   Github
                 </Footer.Link>
-                <Footer.Link href="#">Discord</Footer.Link>
+                <Footer.Link href="/discord">Discord</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.Title title="Legal" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">Privacy Policy</Footer.Link>
-                <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
+                <Footer.Link href="/privacy">Privacy Policy</Footer.Link>
+                <Footer.Link href="/terms">Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>
@@ -69,11 +69,31 @@ export default function FooterCom() {
             year={new Date().getFullYear()}
           />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
-            <Footer.Icon href="#" icon={BsFacebook} />
-            <Footer.Icon href="#" icon={BsInstagram} />
-            <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="#" icon={BsGithub} />
-            <Footer.Icon href="https://zalgiris.lt/" icon={BsDribbble} />
+            <Footer.Icon
+              href="https://facebook.com"
+              target="_blank"
+              icon={BsFacebook}
+            />
+            <Footer.Icon
+              href="https://instagram.com"
+              target="_blank"
+              icon={BsInstagram}
+            />
+            <Footer.Icon
+              href="https://twitter.com"
+              target="_blank"
+              icon={BsTwitter}
+            />
+            <Footer.Icon
+              href="https://github.com"
+              target="_blank"
+              icon={BsGithub}
+            />
+            <Footer.Icon
+              href="https://zalgiris.lt/"
+              target="_blank"
+              icon={BsDribbble}
+            />
           </div>
         </div>
       </div>
