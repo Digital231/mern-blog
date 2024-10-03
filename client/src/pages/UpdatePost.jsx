@@ -16,18 +16,25 @@ import { useSelector } from "react-redux";
 
 export default function UpdatePost() {
   const [file, setFile] = useState(null);
-  const [imageUploadProgress, setImageUploadProgress] = useState(null);
-  const [imageUploadError, setImageUploadError] = useState(null);
-  const [formData, setFormData] = useState({});
-  const [publishError, setPublishError] = useState(null);
+  const [imageUploadProgress, setImageUploadProgress] = useState(0); // Initialized to 0 instead of null for a consistent type
+  const [imageUploadError, setImageUploadError] = useState("");
+  const [formData, setFormData] = useState({
+    title: "", // Initializing with empty strings to avoid controlled to uncontrolled warning
+    category: "",
+    content: "",
+    image: "",
+  });
+  const [publishError, setPublishError] = useState("");
+  const [loading, setLoading] = useState(true); // New loading state
   const { postId } = useParams();
 
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
-    try {
-      const fetchPost = async () => {
+    const fetchPost = async () => {
+      setLoading(true); // Start loading
+      try {
         const res = await fetch(`/api/post/getposts?postId=${postId}`);
         const data = await res.json();
         if (!res.ok) {
@@ -37,15 +44,26 @@ export default function UpdatePost() {
         }
         if (res.ok) {
           setPublishError(null);
-          setFormData(data.posts[0]);
+          setFormData({
+            title: data.posts[0].title || "",
+            category: data.posts[0].category || "",
+            content: data.posts[0].content || "",
+            image: data.posts[0].image || "",
+          });
         }
-      };
+      } catch (error) {
+        console.log(error.message);
+      } finally {
+        setLoading(false); // Stop loading
+      }
+    };
 
-      fetchPost();
-    } catch (error) {
-      console.log(error.message);
-    }
+    fetchPost();
   }, [postId]);
+
+  if (loading) {
+    return <div>Loading...</div>; // Or any loading indicator
+  }
 
   const handleUpdloadImage = async () => {
     try {
@@ -85,6 +103,11 @@ export default function UpdatePost() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData._id || !currentUser._id) {
+      console.error("Post ID or User ID is undefined.");
+      setPublishError("Invalid operation. Missing data.");
+      return;
+    }
     try {
       const res = await fetch(
         `/api/post/updatepost/${formData._id}/${currentUser._id}`,
@@ -185,7 +208,11 @@ export default function UpdatePost() {
             setFormData({ ...formData, content: value });
           }}
         />
-        <Button type="submit" gradientDuoTone="purpleToPink">
+        <Button
+          type="submit"
+          gradientDuoTone="purpleToPink"
+          disabled={!formData._id || !currentUser._id}
+        >
           Update post
         </Button>
         {publishError && (

@@ -28,13 +28,6 @@ export default function FooterCom() {
               <Footer.Title title="About" />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href="https://sarunas.top"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tapsnoklis
-                </Footer.Link>
-                <Footer.Link
                   href="/about"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -46,10 +39,16 @@ export default function FooterCom() {
             <div>
               <Footer.Title title="Follow us" />
               <Footer.LinkGroup col>
-                <Footer.Link href="" target="_blank" rel="noopener noreferrer">
+                <Footer.Link
+                  href="https://github.com/Digital231"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Github
                 </Footer.Link>
-                <Footer.Link href="/discord">Discord</Footer.Link>
+                <Footer.Link href="https://www.linkedin.com/in/sarunas-cironka/">
+                  LinkedIn
+                </Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -85,7 +84,7 @@ export default function FooterCom() {
               icon={BsTwitter}
             />
             <Footer.Icon
-              href="https://github.com"
+              href="https://github.com/Digital231"
               target="_blank"
               icon={BsGithub}
             />

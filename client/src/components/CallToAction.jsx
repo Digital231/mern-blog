@@ -9,16 +9,13 @@ export default function CallToAction() {
     <div className="flex flex-col sm:flex-row p-3 border border-teal-500 justify-center items-center rounded-tl-3xl rounded-br-3xl text-center">
       <div className="flex-1 justify-center flex flex-col">
         <h2 className="text-2xl">Want to check my other project?</h2>
-        <p className="text-gray-500 my-2">
-          Checkout this instagram like app built with react and appwrite, still
-          buggy but runs!
-        </p>
+        <p className="text-gray-500 my-2">Coming soon my portfolio page...</p>
         <Button
-          onClick={handleClick}
+          // onClick={handleClick}
           gradientDuoTone="purpleToPink"
           className="rounded-tl-xl rounded-bl-none"
         >
-          Tapsnoklis
+          Coming soon
         </Button>
       </div>
       <div className="p-7 flex-1">
